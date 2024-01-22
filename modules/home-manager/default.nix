@@ -22,8 +22,12 @@
 
       # Make fn+delete forward delete
       initExtra = ''
-        bindkey "^[[3~" delete-char
-        bindkey "^[3;5~" delete-char
+        bindkey "^[[3~"   delete-char
+        bindkey "^[3;5~"  delete-char
+        bindkey "^[[1;3C" forward-word
+        bindkey "^[[1;3D" backward-word
+
+        WORDCHARS="*?-.[]~=&;!#$%^(){}<>"
       '';
 
       shellAliases = {
@@ -40,6 +44,16 @@
     kitty.font = {
       name = "Fira Code";
       size = 13.0;
+    };
+    kitty.settings = {
+      top_bar_edge = "top";
+      tab_bar_style = "slant";
+      enabled_layouts = "tall";
+      macos_option_as_alt = "both";
+    };
+    kitty.keybindings = {
+      "cmd+enter" = "launch --cwd=current --type=window";
+      "cmd+shift+t" = "new_tab_with_cwd";
     };
 
     starship.enable = true;

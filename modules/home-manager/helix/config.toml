@@ -41,4 +41,4 @@ X = "extend_line_above"
 [keys.normal.space]
 q = ":quit"
 w = ":write"
-space = "file_picker";
+space = "file_picker"
