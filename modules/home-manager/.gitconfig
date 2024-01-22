@@ -1,0 +1,22 @@
+[user]
+	name = Toby Law
+	email = toby.zhi-chao.law@rokt.com
+	signingkey = /Users/toby/.ssh/id_ed25519.pub
+
+[init]
+	defaultBranch = main
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[push]
+	autoSetupRemote = true
+
+[commit]
+	gpgSign = true
+
+[gpg]
+	format = ssh
+
+[gpg.ssh]
+	allowedSignersFile = "~/.ssh/allowed_signers"
