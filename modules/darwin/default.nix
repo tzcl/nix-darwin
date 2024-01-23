@@ -55,7 +55,7 @@
   users.users.toby.home = "/Users/toby";
 
   homebrew.enable = true;
-  homebrew.casks = [ "google-chrome" "docker" ];
+  homebrew.casks = [ "google-chrome" "docker" "logseq" ];
   homebrew.masApps = { "Bitwarden" = 1352778147; };
 
   homebrew.onActivation.cleanup = "zap";
