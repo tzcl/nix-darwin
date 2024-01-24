@@ -1,17 +1,22 @@
-{
-  # Don't need to change this.
+{ pkgs, ... }: {
+  # Required for backwards-compatibility
   home.stateVersion = "23.11";
 
+  home.sessionPath = [ "/opt/homebrew/bin" ];
+
   # TODO: There should be a nicer way of doing this
+  # TODO: Can I just recursively specify my dotfiles?
+  # TODO: Also is there a way to symlink them?
   home.file.".gitconfig".source = ./.gitconfig;
   home.file.".ssh/config".source = ./.ssh/config;
-  # TODO: How I can set this up automatically?
   home.file.".ssh/allowed_signers".source = ./.ssh/allowed_signers;
   home.file.".aws/config".source = ./.aws/config;
   home.file.".config/karabiner/karabiner.json".source =
     ./.config/karabiner/karabiner.json;
   home.file.".config/helix/config.toml".source = ./helix/config.toml;
   home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
+
+  home.packages = with pkgs; [ nil nixfmt ];
 
   programs = {
     zsh = {
@@ -20,19 +25,27 @@
       enableCompletion = true;
       syntaxHighlighting.enable = true;
 
-      # Make fn+delete forward delete
       initExtra = ''
+        # Make fn+delete forward delete
         bindkey "^[[3~"   delete-char
         bindkey "^[3;5~"  delete-char
         bindkey "^[[1;3C" forward-word
         bindkey "^[[1;3D" backward-word
 
-        WORDCHARS="*?-.[]~=&;!#$%^(){}<>"
+        # Separate words by puncutation
+        WORDCHARS=""
+
+        precmd () {
+          print -Pn "\e]0;%~\a"
+        }
       '';
 
       shellAliases = {
         rokt-stage = "aws-vault exec rokt-stage -- ";
         rokt-prod = "aws-valut exec rokt-prod -- ";
+
+        lg = "lazygit";
+        ld = "lazydocker";
       };
     };
 
