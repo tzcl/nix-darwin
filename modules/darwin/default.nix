@@ -1,14 +1,8 @@
 { pkgs, inputs, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    dotnet-sdk_8
-    raycast
-    k9s
-    aws-vault
-    nil
-    nixfmt
-  ];
+
+  environment.systemPackages = with pkgs; [ raycast ];
   environment.pathsToLink = [ "/share/zsh" ];
 
   # TODO: Does enabling this do something weird? I don't fully understand how it works.
@@ -52,7 +46,10 @@
   # Enable sudo authentication with Touch ID
   security.pam.enableSudoTouchIdAuth = true;
 
-  users.users.toby.home = "/Users/toby";
+  users.users.toby = {
+    name = "toby";
+    home = "/Users/toby";
+  };
 
   homebrew.enable = true;
   homebrew.casks = [ "google-chrome" "docker" "logseq" ];
