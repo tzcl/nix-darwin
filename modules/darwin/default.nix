@@ -51,12 +51,22 @@
     home = "/Users/toby";
   };
 
-  homebrew.enable = true;
-  homebrew.casks = [ "google-chrome" "docker" "logseq" ];
-  homebrew.masApps = { "Bitwarden" = 1352778147; };
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";
+    global.brewfile = true;
 
-  homebrew.onActivation.cleanup = "zap";
-  homebrew.global.brewfile = true;
+    taps = [ "ejoffe/tap" ];
+    brews = [
+      "ejoffe/tap/spr"
+
+      # Work
+      "aws-vault"
+      "lazydocker"
+    ];
+    casks = [ "google-chrome" "docker" "logseq" ];
+    masApps = { "Bitwarden" = 1352778147; };
+  };
 
   system.defaults.CustomUserPreferences = {
     "com.raycast.macos" = {

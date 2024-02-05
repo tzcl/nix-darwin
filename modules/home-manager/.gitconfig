@@ -6,6 +6,20 @@
 [init]
 	defaultBranch = main
 
+[alias] 
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+
+	unstage = "reset HEAD --"
+	last = "log -1 HEAD"
+	fl = "log --graph --decorate --oneline"
+
+	clone-wt = "!clone-wt.zsh"
+
+	wipe = !git add -A && git commit -qm "WIPE SAVEPOINT" && git reset HEAD~1 --hard
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 
