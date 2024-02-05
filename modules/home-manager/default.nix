@@ -2,12 +2,18 @@
   # Required for backwards-compatibility
   home.stateVersion = "23.11";
 
-  home.sessionPath = [ "/opt/homebrew/bin" ];
+  home.sessionPath = [
+    "/opt/homebrew/bin"
+    "/usr/local/share/bin"
+    "/usr/local/share/dotnet"
+    "$HOME/scripts"
+  ];
 
   # TODO: There should be a nicer way of doing this
   # TODO: Can I just recursively specify my dotfiles?
   # TODO: Also is there a way to symlink them?
   home.file.".gitconfig".source = ./.gitconfig;
+  home.file."scripts/clone-wt.zsh".source = ./scripts/clone-wt.zsh;
   home.file.".ssh/config".source = ./.ssh/config;
   home.file.".ssh/allowed_signers".source = ./.ssh/allowed_signers;
   home.file.".aws/config".source = ./.aws/config;
@@ -23,6 +29,7 @@
       enable = true;
       enableAutosuggestions = true;
       enableCompletion = true;
+      defaultKeymap = "viins";
       syntaxHighlighting.enable = true;
 
       initExtra = ''
@@ -35,9 +42,13 @@
         # Separate words by puncutation
         WORDCHARS=""
 
+        # Set title to current directory
         precmd () {
           print -Pn "\e]0;%~\a"
         }
+
+        # Set up gh auth
+        export GITHUB_TOKEN=$(gh auth token)
       '';
 
       shellAliases = {
@@ -46,6 +57,9 @@
 
         lg = "lazygit";
         ld = "lazydocker";
+
+        gc = "git add -A && git commit";
+        gca = "git add -A && git commit --amend";
       };
     };
 
