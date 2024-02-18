@@ -26,6 +26,35 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
 
+  users.users.toby = {
+    name = "toby";
+    home = "/Users/toby";
+  };
+
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";
+    global.brewfile = true;
+
+    taps = [ "ejoffe/tap" "derailed/k9s" "hashicorp/tap" ];
+    brews = [
+      "ejoffe/tap/spr"
+
+      # Work
+      ## Utilities
+      "aws-vault"
+      "lazydocker"
+      "hashicorp/tap/terraform"
+
+      ## Kubernetes
+      "kubectl"
+      "minikube"
+      "derailed/k9s/k9s"
+    ];
+    casks = [ "google-chrome" "docker" "logseq" "trunk-io" ];
+    masApps = { "Bitwarden" = 1352778147; };
+  };
+
   # Set Git commit hash for darwin-version.
   system.configurationRevision =
     inputs.self.rev or inputs.self.dirtyRev or null;
@@ -45,28 +74,6 @@
 
   # Enable sudo authentication with Touch ID
   security.pam.enableSudoTouchIdAuth = true;
-
-  users.users.toby = {
-    name = "toby";
-    home = "/Users/toby";
-  };
-
-  homebrew = {
-    enable = true;
-    onActivation.cleanup = "zap";
-    global.brewfile = true;
-
-    taps = [ "ejoffe/tap" ];
-    brews = [
-      "ejoffe/tap/spr"
-
-      # Work
-      "aws-vault"
-      "lazydocker"
-    ];
-    casks = [ "google-chrome" "docker" "logseq" ];
-    masApps = { "Bitwarden" = 1352778147; };
-  };
 
   system.defaults.CustomUserPreferences = {
     "com.raycast.macos" = {

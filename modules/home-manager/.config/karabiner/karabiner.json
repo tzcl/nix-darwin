@@ -64,6 +64,22 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/toby/Applications/DataGrip.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "g",
                                     "modifiers": {
                                         "mandatory": [
@@ -74,6 +90,22 @@
                                 "to": [
                                     {
                                         "shell_command": "open '/Users/toby/Applications/GoLand.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/toby/Applications/Home Manager Apps/Kitty.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -96,7 +128,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "k",
+                                    "key_code": "m",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -105,7 +137,39 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/Home Manager Apps/Kitty.app'"
+                                        "shell_command": "open '/Users/toby/Applications/Chrome Apps.localized/Google Meet.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/toby/Applications/Chrome Apps.localized/Google Chat.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Users/toby/Applications/Rider.app'"
                                     }
                                 ],
                                 "type": "basic"

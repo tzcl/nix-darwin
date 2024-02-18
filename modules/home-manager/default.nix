@@ -7,6 +7,8 @@
     "/usr/local/share/bin"
     "/usr/local/share/dotnet"
     "$HOME/scripts"
+    "$HOME/.dotnet/tools"
+    "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
   ];
 
   # TODO: There should be a nicer way of doing this
@@ -16,7 +18,6 @@
   home.file."scripts/clone-wt.zsh".source = ./scripts/clone-wt.zsh;
   home.file.".ssh/config".source = ./.ssh/config;
   home.file.".ssh/allowed_signers".source = ./.ssh/allowed_signers;
-  home.file.".aws/config".source = ./.aws/config;
   home.file.".config/karabiner/karabiner.json".source =
     ./.config/karabiner/karabiner.json;
   home.file.".config/helix/config.toml".source = ./helix/config.toml;
@@ -39,7 +40,20 @@
         bindkey "^[[1;3C" forward-word
         bindkey "^[[1;3D" backward-word
 
-        # Separate words by puncutation
+        # Allow lazygit to change directories
+        lg()
+        {
+          export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+          lazygit "$@"
+
+          if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+              rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+          fi
+        }
+
+        # Separate words by punctuation
         WORDCHARS=""
 
         # Set title to current directory
@@ -49,13 +63,26 @@
 
         # Set up gh auth
         export GITHUB_TOKEN=$(gh auth token)
+
+        # Set up command line
+        autoload -U edit-command-line
+        zle -N edit-command-line
+        bindkey '^xe' edit-command-line
+        bindkey '^x^e' edit-command-line
+
+        zmodload zsh/zprof
+      '';
+      initExtraBeforeCompInit = ''
+        if type brew &>/dev/null
+        then
+          FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+        fi
       '';
 
       shellAliases = {
         rokt-stage = "aws-vault exec rokt-stage -- ";
         rokt-prod = "aws-valut exec rokt-prod -- ";
 
-        lg = "lazygit";
         ld = "lazydocker";
 
         gc = "git add -A && git commit";
@@ -103,6 +130,7 @@
     atuin = {
       enable = true;
       enableZshIntegration = true;
+      flags = [ "--disable-up-arrow" ];
     };
     bat = {
       enable = true;
