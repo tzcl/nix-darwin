@@ -11,17 +11,21 @@
     "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
   ];
 
-  # TODO: There should be a nicer way of doing this
-  # TODO: Can I just recursively specify my dotfiles?
-  # TODO: Also is there a way to symlink them?
-  home.file.".gitconfig".source = ./.gitconfig;
-  home.file."scripts/clone-wt.zsh".source = ./scripts/clone-wt.zsh;
-  home.file.".ssh/config".source = ./.ssh/config;
-  home.file.".ssh/allowed_signers".source = ./.ssh/allowed_signers;
-  home.file.".config/karabiner/karabiner.json".source =
-    ./.config/karabiner/karabiner.json;
-  home.file.".config/helix/config.toml".source = ./helix/config.toml;
-  home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
+  home.file = {
+    ".gitconfig".source = ./home/.gitconfig;
+    ".ssh" = {
+      recursive = true;
+      source = ./home/.ssh;
+    };
+    ".config" = {
+      recursive = true;
+      source = ./home/.config;
+    };
+    "scripts" = {
+      recursive = true;
+      source = ./home/scripts;
+    };
+  };
 
   home.packages = with pkgs; [ nil nixfmt ];
 
