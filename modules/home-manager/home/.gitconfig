@@ -6,6 +6,9 @@
 [init]
 	defaultBranch = main
 
+[core]
+	excludesFile = /Users/toby/.gitignore
+
 [alias] 
 	co = checkout
 	br = branch

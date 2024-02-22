@@ -9,6 +9,7 @@
     "$HOME/scripts"
     "$HOME/.dotnet/tools"
     "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+    "/Applications/Sublime Merge.app/Contents/SharedSupport/bin"
   ];
 
   home.file = {
@@ -91,6 +92,8 @@
 
         gc = "git add -A && git commit";
         gca = "git add -A && git commit --amend";
+
+        switch = "darwin-rebuild switch --flake ~/src/nix-darwin --impure";
       };
     };
 
