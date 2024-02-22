@@ -25,6 +25,10 @@
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
+  programs.zsh.loginShellInit = ''
+    # Start ssh-agent
+    eval $(ssh-agent)
+  '';
 
   users.users.toby = {
     name = "toby";
