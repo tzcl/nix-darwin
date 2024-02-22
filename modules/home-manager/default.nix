@@ -12,21 +12,17 @@
     "/Applications/Sublime Merge.app/Contents/SharedSupport/bin"
   ];
 
-  home.file = {
-    ".gitconfig".source = ./home/.gitconfig;
-    ".ssh" = {
-      recursive = true;
-      source = ./home/.ssh;
-    };
-    ".config" = {
-      recursive = true;
-      source = ./home/.config;
-    };
-    "scripts" = {
-      recursive = true;
-      source = ./home/scripts;
-    };
-  };
+  # TODO: There should be a nicer way of doing this
+  # TODO: Can I just recursively specify my dotfiles?
+  # TODO: Also is there a way to symlink them?
+  home.file.".gitconfig".source = ./.gitconfig;
+  home.file."scripts/clone-wt.zsh".source = ./scripts/clone-wt.zsh;
+  home.file.".ssh/config".source = ./.ssh/config;
+  home.file.".ssh/allowed_signers".source = ./.ssh/allowed_signers;
+  home.file.".config/karabiner/karabiner.json".source =
+    ./.config/karabiner/karabiner.json;
+  home.file.".config/helix/config.toml".source = ./helix/config.toml;
+  home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
 
   home.packages = with pkgs; [ nil nixfmt ];
 
@@ -44,6 +40,15 @@
         bindkey "^[3;5~"  delete-char
         bindkey "^[[1;3C" forward-word
         bindkey "^[[1;3D" backward-word
+
+        # Set up command line
+        autoload -U edit-command-line
+        zle -N edit-command-line
+        bindkey '^xe' edit-command-line
+        bindkey '^x^e' edit-command-line
+
+        # Start ssh agent
+        eval $(ssh-agent -s)
 
         # Allow lazygit to change directories
         lg()
@@ -68,12 +73,6 @@
 
         # Set up gh auth
         export GITHUB_TOKEN=$(gh auth token)
-
-        # Set up command line
-        autoload -U edit-command-line
-        zle -N edit-command-line
-        bindkey '^xe' edit-command-line
-        bindkey '^x^e' edit-command-line
 
         zmodload zsh/zprof
       '';
@@ -113,8 +112,15 @@
       macos_option_as_alt = "both";
     };
     kitty.keybindings = {
+      # Opening new splits
       "cmd+enter" = "launch --cwd=current --type=window";
       "cmd+shift+t" = "new_tab_with_cwd";
+
+      # Prompt editing
+      "alt+backspace" = "send_text all x17";
+      "super+backspace" = "send_text all x15";
+      "super+left" = "send_text all x01";
+      "super+right" = "send_text all x05";
     };
 
     starship.enable = true;
