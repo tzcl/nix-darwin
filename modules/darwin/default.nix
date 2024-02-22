@@ -4,10 +4,7 @@
 
   environment.systemPackages = with pkgs; [ raycast ];
   environment.pathsToLink = [ "/share/zsh" ];
-  environment.variables = {
-    EDITOR = "hx";
-    VISUAL = "subl";
-  };
+  environment.variables = { EDITOR = "hx"; };
 
   # TODO: Does enabling this do something weird? I don't fully understand how it works.
   # I think fonts won't be uninstalled from here unless uninstalled manually.
