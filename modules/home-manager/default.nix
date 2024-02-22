@@ -47,9 +47,6 @@
         bindkey '^xe' edit-command-line
         bindkey '^x^e' edit-command-line
 
-        # Start ssh agent
-        eval $(ssh-agent -s)
-
         # Allow lazygit to change directories
         lg()
         {
