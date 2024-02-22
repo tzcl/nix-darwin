@@ -4,6 +4,10 @@
 
   environment.systemPackages = with pkgs; [ raycast ];
   environment.pathsToLink = [ "/share/zsh" ];
+  environment.variables = {
+    EDITOR = "hx";
+    VISUAL = "subl";
+  };
 
   # TODO: Does enabling this do something weird? I don't fully understand how it works.
   # I think fonts won't be uninstalled from here unless uninstalled manually.
@@ -24,11 +28,13 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;
-  programs.zsh.loginShellInit = ''
-    # Start ssh-agent
-    eval $(ssh-agent)
-  '';
+  programs.zsh = {
+    enable = true;
+    loginShellInit = ''
+      # Start ssh-agent
+      eval $(ssh-agent)
+    '';
+  };
 
   users.users.toby = {
     name = "toby";
