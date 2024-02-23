@@ -4,7 +4,10 @@
 
   environment.systemPackages = with pkgs; [ raycast ];
   environment.pathsToLink = [ "/share/zsh" ];
-  environment.variables = { EDITOR = "hx"; };
+  environment.variables = {
+    EDITOR = "hx";
+    VISUAL = "hx";
+  };
 
   # TODO: Does enabling this do something weird? I don't fully understand how it works.
   # I think fonts won't be uninstalled from here unless uninstalled manually.
@@ -58,7 +61,7 @@
       "minikube"
       "derailed/k9s/k9s"
     ];
-    casks = [ "google-chrome" "docker" "logseq" "trunk-io" ];
+    casks = [ "google-chrome" "docker" "logseq" "trunk-io" "zed" ];
     masApps = { "Bitwarden" = 1352778147; };
   };
 

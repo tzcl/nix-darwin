@@ -107,6 +107,7 @@
       tab_bar_style = "slant";
       enabled_layouts = "tall";
       macos_option_as_alt = "both";
+      shell = "zsh -i";
     };
     kitty.keybindings = {
       # Opening new splits
