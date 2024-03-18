@@ -8,6 +8,7 @@
     "/usr/local/share/dotnet"
     "$HOME/scripts"
     "$HOME/.dotnet/tools"
+    "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
     "/Applications/Sublime Merge.app/Contents/SharedSupport/bin"
   ];
@@ -24,7 +25,7 @@
   home.file.".config/helix/config.toml".source = ./helix/config.toml;
   home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
 
-  home.packages = with pkgs; [ nil nixfmt ];
+  home.packages = with pkgs; [ nil nixfmt go shellcheck ];
 
   programs = {
     zsh = {
@@ -128,7 +129,10 @@
     helix.defaultEditor = true;
 
     # Git and related utilities
-    git.enable = true;
+    git = {
+      enable = true;
+      lfs.enable = true;
+    };
     ssh.enable = true;
     lazygit = {
       enable = true;
@@ -143,6 +147,9 @@
       enableZshIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
+
+    awscli.enable = true;
+
     bat = {
       enable = true;
       config.theme = "catppuccin-frappe";
@@ -156,22 +163,31 @@
         file = "Catppuccin-frappe.tmTheme";
       };
     };
+
     btop.enable = true;
-    broot.enable = true;
-    broot.enableZshIntegration = true;
+
+    broot = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     eza = {
       enable = true;
       enableAliases = true;
       git = true;
       icons = true;
     };
-    fzf.enable = true;
-    fzf.enableZshIntegration = true;
-    zoxide = {
+
+    fzf = {
       enable = true;
       enableZshIntegration = true;
     };
 
-    awscli = { enable = true; };
+    ripgrep.enable = true;
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

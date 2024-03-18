@@ -37,3 +37,6 @@
 
 [gpg.ssh]
 	allowedSignersFile = "~/.ssh/allowed_signers"
+
+[rerere]
+	enabled = true

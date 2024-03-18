@@ -153,14 +153,14 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/Chrome Apps.localized/Google Chat.app'"
+                                        "shell_command": "open '/Users/toby/Applications/Chrome Apps.localized/Gmail.app'"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "r",
+                                    "key_code": "p",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -169,7 +169,23 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/Rider.app'"
+                                        "shell_command": "open '/Users/toby/Applications/PyCharm Professional Edition.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open '/Applications/Zed.app'"
                                     }
                                 ],
                                 "type": "basic"
