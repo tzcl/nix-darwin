@@ -46,8 +46,9 @@
     onActivation.cleanup = "zap";
     global.brewfile = true;
 
-    taps = [ "ejoffe/tap" "derailed/k9s" "hashicorp/tap" ];
+    taps = [ "ejoffe/tap" "derailed/k9s" "hashicorp/tap" "argoproj/tap" ];
     brews = [
+      "git-lfs"
       "ejoffe/tap/spr"
 
       # Work
@@ -55,11 +56,14 @@
       "aws-vault"
       "lazydocker"
       "hashicorp/tap/terraform"
+      "grpcurl"
 
       ## Kubernetes
       "kubectl"
       "minikube"
       "derailed/k9s/k9s"
+      "helm"
+      "argoproj/tap/kubectl-argo-rollouts"
     ];
     casks = [ "google-chrome" "docker" "logseq" "trunk-io" "zed" ];
     masApps = { "Bitwarden" = 1352778147; };
