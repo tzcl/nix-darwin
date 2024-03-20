@@ -48,7 +48,6 @@
 
     taps = [ "ejoffe/tap" "derailed/k9s" "hashicorp/tap" "argoproj/tap" ];
     brews = [
-      "git-lfs"
       "ejoffe/tap/spr"
 
       # Work
@@ -65,7 +64,7 @@
       "helm"
       "argoproj/tap/kubectl-argo-rollouts"
     ];
-    casks = [ "google-chrome" "docker" "logseq" "trunk-io" "zed" ];
+    casks = [ "google-chrome" "docker" "logseq" "trunk-io" "zed" "github" ];
     masApps = { "Bitwarden" = 1352778147; };
   };
 
