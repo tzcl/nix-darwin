@@ -25,7 +25,7 @@
   home.file.".config/helix/config.toml".source = ./helix/config.toml;
   home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
 
-  home.packages = with pkgs; [ nil nixfmt go shellcheck ];
+  home.packages = with pkgs; [ nil nixfmt go shellcheck python3 ];
 
   programs = {
     zsh = {
@@ -83,7 +83,7 @@
 
       shellAliases = {
         rokt-stage = "aws-vault exec rokt-stage -- ";
-        rokt-prod = "aws-valut exec rokt-prod -- ";
+        rokt-prod = "aws-vault exec rokt-prod -- ";
 
         ld = "lazydocker";
 
