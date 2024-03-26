@@ -25,7 +25,7 @@
   home.file.".config/helix/config.toml".source = ./helix/config.toml;
   home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
 
-  home.packages = with pkgs; [ nil nixfmt go shellcheck python3 ];
+  home.packages = with pkgs; [ nil nixfmt go shellcheck python3 yq-go ];
 
   programs = {
     zsh = {
