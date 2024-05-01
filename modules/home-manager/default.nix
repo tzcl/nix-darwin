@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   # Required for backwards-compatibility
   home.stateVersion = "23.11";
 
@@ -13,17 +13,23 @@
     "/Applications/Sublime Merge.app/Contents/SharedSupport/bin"
   ];
 
-  # TODO: There should be a nicer way of doing this
-  # TODO: Can I just recursively specify my dotfiles?
-  # TODO: Also is there a way to symlink them?
-  home.file.".gitconfig".source = ./.gitconfig;
-  home.file."scripts/clone-wt.zsh".source = ./scripts/clone-wt.zsh;
-  home.file.".ssh/config".source = ./.ssh/config;
-  home.file.".ssh/allowed_signers".source = ./.ssh/allowed_signers;
+  # Set up config files as symlinks (this requires absolute paths)
+  home.file.".gitconfig".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.gitconfig";
+  home.file."scripts/clone-wt.zsh".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/scripts/clone-wt.zsh";
+  home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.ssh/config";
+  home.file.".ssh/allowed_signers".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.ssh/allowed_signers";
   home.file.".config/karabiner/karabiner.json".source =
     ./.config/karabiner/karabiner.json;
-  home.file.".config/helix/config.toml".source = ./helix/config.toml;
-  home.file.".config/helix/languages.toml".source = ./helix/languages.toml;
+  home.file.".config/helix/config.toml".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/helix/config.toml";
+  home.file.".config/helix/languages.toml".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/helix/languages.toml";
 
   home.packages = with pkgs; [ nil nixfmt go shellcheck python3 yq-go ];
 
