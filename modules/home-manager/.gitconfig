@@ -1,6 +1,6 @@
 [user]
 	name = Toby Law
-	email = toby.zhi-chao.law@rokt.com
+	email = toby.law@rokt.com
 	signingkey = /Users/toby/.ssh/id_ed25519.pub
 
 [init]
