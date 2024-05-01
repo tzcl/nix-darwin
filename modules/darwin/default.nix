@@ -64,8 +64,13 @@
       "helm"
       "argoproj/tap/kubectl-argo-rollouts"
     ];
-    casks = [ "google-chrome" "docker" "logseq" "trunk-io" "zed" "github" ];
-    masApps = { "Bitwarden" = 1352778147; };
+    casks =
+      [ "docker" "github" "google-chrome" "logseq" "visual-studio-code" "zed" ];
+    masApps = {
+      "Bitwarden" = 1352778147;
+      "WireGuard" = 1451685025;
+      "Todoist" = 585829637;
+    };
   };
 
   # Set Git commit hash for darwin-version.
