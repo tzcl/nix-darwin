@@ -96,7 +96,7 @@
         gc = "git add -A && git commit";
         gca = "git add -A && git commit --amend";
 
-        switch = "darwin-rebuild switch --flake ~/src/nix-darwin --impure";
+        switch = "darwin-rebuild switch --flake ~/src/nix-darwin";
       };
     };
 
