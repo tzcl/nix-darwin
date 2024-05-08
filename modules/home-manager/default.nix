@@ -23,7 +23,8 @@
   home.file.".ssh/allowed_signers".source = config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.ssh/allowed_signers";
   home.file.".config/karabiner/karabiner.json".source =
-    ./.config/karabiner/karabiner.json;
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.config/karabiner/karabiner.json";
   home.file.".config/helix/config.toml".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/helix/config.toml";
@@ -31,7 +32,16 @@
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/helix/languages.toml";
 
-  home.packages = with pkgs; [ nil nixfmt go shellcheck python3 yq-go ];
+  home.packages = with pkgs; [
+    nil
+    nixfmt
+    go
+    shellcheck
+    python3
+    yq-go
+    kubernetes-helm
+    just
+  ];
 
   programs = {
     zsh = {

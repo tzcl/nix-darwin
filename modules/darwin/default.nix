@@ -56,12 +56,12 @@
       "lazydocker"
       "hashicorp/tap/terraform"
       "grpcurl"
+      "bazelisk"
 
       ## Kubernetes
       "kubectl"
       "minikube"
       "derailed/k9s/k9s"
-      "helm"
       "argoproj/tap/kubectl-argo-rollouts"
     ];
     casks =
