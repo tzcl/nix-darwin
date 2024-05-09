@@ -41,6 +41,7 @@
     yq-go
     kubernetes-helm
     just
+    slack
   ];
 
   programs = {
