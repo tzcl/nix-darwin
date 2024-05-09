@@ -46,9 +46,16 @@
     onActivation.cleanup = "zap";
     global.brewfile = true;
 
-    taps = [ "ejoffe/tap" "derailed/k9s" "hashicorp/tap" "argoproj/tap" ];
+    taps = [
+      "ejoffe/tap"
+      "derailed/k9s"
+      "hashicorp/tap"
+      "argoproj/tap"
+      "withgraphite/tap"
+    ];
     brews = [
       "ejoffe/tap/spr"
+      "withgraphite/tap/graphite"
 
       # Work
       ## Utilities
