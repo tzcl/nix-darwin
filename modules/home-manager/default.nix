@@ -15,22 +15,22 @@
 
   # Set up config files as symlinks (this requires absolute paths)
   home.file.".gitconfig".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.gitconfig";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.gitconfig";
   home.file."scripts/clone-wt.zsh".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/scripts/clone-wt.zsh";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/scripts/clone-wt.zsh";
   home.file.".ssh/config".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.ssh/config";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.ssh/config";
   home.file.".ssh/allowed_signers".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.ssh/allowed_signers";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.ssh/allowed_signers";
   home.file.".config/karabiner/karabiner.json".source =
     config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/.config/karabiner/karabiner.json";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.config/karabiner/karabiner.json";
   home.file.".config/helix/config.toml".source =
     config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/helix/config.toml";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/helix/config.toml";
   home.file.".config/helix/languages.toml".source =
     config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/helix/languages.toml";
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/helix/languages.toml";
 
   home.packages = with pkgs; [
     nil
@@ -42,6 +42,7 @@
     kubernetes-helm
     just
     slack
+    obsidian
   ];
 
   programs = {
