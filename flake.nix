@@ -1,5 +1,5 @@
 {
-  description = "Toby's nix-darwin config";
+  description = "NixOS config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -29,8 +29,5 @@
         }
       ];
     };
-
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Tobys-MacBook-Pro".pkgs;
   };
 }
