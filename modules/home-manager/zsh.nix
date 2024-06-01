@@ -2,7 +2,7 @@
   programs = {
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       defaultKeymap = "viins";
       syntaxHighlighting.enable = true;
@@ -99,7 +99,7 @@
 
     eza = {
       enable = true;
-      enableAliases = true;
+      enableZshIntegration = true;
       git = true;
       icons = true;
     };
