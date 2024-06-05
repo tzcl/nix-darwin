@@ -32,6 +32,7 @@
     just
     slack
     obsidian
+    spotify
   ];
 
   # Work
