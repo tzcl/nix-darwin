@@ -26,6 +26,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.toby.imports = [ ./modules/home-manager ];
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };
