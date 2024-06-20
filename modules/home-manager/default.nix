@@ -20,6 +20,9 @@
   home.file.".config/karabiner/karabiner.json".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.config/karabiner/karabiner.json";
+  # Force overwrite of karabiner config
+  home.file.".config/karabiner/karabiner.json".force = true;
+
   home.file.".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.ideavimrc";
 
