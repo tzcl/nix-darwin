@@ -38,6 +38,7 @@
     slack
     obsidian
     spotify
+    dive
   ];
 
   # Work
