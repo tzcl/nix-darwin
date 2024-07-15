@@ -40,7 +40,6 @@
     spotify
     dive
     wireshark
-    asdf-vm
   ];
 
   # Work
