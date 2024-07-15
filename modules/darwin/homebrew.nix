@@ -28,6 +28,9 @@
       "minikube"
       "derailed/k9s/k9s"
       "argoproj/tap/kubectl-argo-rollouts"
+
+      # Personal
+      "webp"
     ];
     casks =
       [ "docker" "github" "google-chrome" "logseq" "visual-studio-code" "zed" ];
