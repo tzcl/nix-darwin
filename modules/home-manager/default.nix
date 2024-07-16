@@ -49,4 +49,15 @@
 
   # Work
   programs.awscli.enable = true;
+
+  # Use direnv
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
+  home.file.".config/direnv/direnvrc".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.config/direnv/direnvrc";
 }
