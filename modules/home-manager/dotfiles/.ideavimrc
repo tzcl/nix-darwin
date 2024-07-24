@@ -100,6 +100,13 @@ let g:WhichKeyDesc_errors = "<leader>e Error navigation"
 let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
 let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
 
+let g:WhichKeyDesc_tests = "<leader>t Tests"
+let g:WhichKeyDesc_tests_run = "<leader>tr Run test"
+let g:WhichKeyDesc_tests_debug = "<leader>td Debug test"
+let g:WhichKeyDesc_tests_retry = "<leader>tt Rerun current test"
+let g:WhichKeyDesc_tests_redebug = "<leader>ts Redebug current test"
+let g:WhichKeyDesc_tests_breakpoint = "<leader>tb Toggle breakpoint"
+
 " =======================
 " ===  Key mappings   ===
 " =======================
@@ -132,8 +139,8 @@ nmap gh <Action>(Github.Open.In.Browser)
 
 map <leader>j <Plug>(easymotion-s)
 
-map <leader>am <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
+map <leader>am <Action>(ShowIntentionActions)
+map <leader>as <Action>(SearchEverywhere)
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
@@ -149,15 +156,15 @@ map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 
 " File navigation
-map <leader>ff <action>(GotoFile)
-map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
+map <leader>ff <Action>(GotoFile)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fc <Action>(FindInPath)
 map <leader><leader> <Action>(RecentFiles)
-map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
+map <leader>fl <Action>(RecentLocations)
+map <leader>fs <Action>(NewScratchFile)
 
 " Close active tab
-map <leader>q <action>(CloseContent)
+map <leader>q <Action>(CloseContent)
 
 " Refactoring
 map <leader>rn <Action>(RenameElement)
@@ -171,3 +178,9 @@ map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>en <Action>(GotoNextError)
 map <leader>ep <Action>(GotoPreviousError)
 
+" Tests
+map <leader>tr <Action>(RunClass)
+map <leader>tt <Action>(Run)
+map <leader>ts <Action>(Debug)
+map <leader>td <Action>(DebugClass)
+map <leader>tb <Action>(ToggleBreakpointEnabled)
