@@ -40,6 +40,7 @@
     yq-go
     dive
     kubernetes-helm
+    dust
 
     slack
     obsidian
