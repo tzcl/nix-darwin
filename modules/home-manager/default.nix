@@ -27,6 +27,8 @@
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.ideavimrc";
 
   home.packages = with pkgs; [
+    coreutils
+
     go
     python310
 
