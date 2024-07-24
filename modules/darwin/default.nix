@@ -10,8 +10,7 @@
   services.karabiner-elements.enable = true;
 
   # NOTE: This removes any manually-added fonts
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [ fira-code fira-code-nerdfont ];
+  fonts.packages = with pkgs; [ fira-code fira-code-nerdfont ];
 
   # --- Nix config --- #
 
