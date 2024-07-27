@@ -4,7 +4,6 @@
       enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
-      defaultKeymap = "viins";
       syntaxHighlighting.enable = true;
 
       initExtra = ''
@@ -34,7 +33,7 @@
         }
 
         # Separate words by punctuation
-        WORDCHARS=""
+        WORDCHARS=''${WORDCHARS/\\/}
 
         # Set title to current directory
         precmd () {
