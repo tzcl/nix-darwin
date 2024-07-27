@@ -7,6 +7,7 @@
   system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
   system.defaults.NSGlobalDomain.InitialKeyRepeat = 25;
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
+  system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
 
   # Enable sudo authentication with Touch ID
   security.pam.enableSudoTouchIdAuth = true;
