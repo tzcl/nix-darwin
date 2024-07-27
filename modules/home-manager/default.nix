@@ -27,23 +27,32 @@
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.ideavimrc";
 
   home.packages = with pkgs; [
+    # System utilities
     coreutils
 
+    # Languages
     go
     python310
 
-    nil
-    nixfmt
-    shellcheck
+    # Command line
+    yq-go
+    uv
 
+    ## Task runners
     just
     go-task
 
-    yq-go
+    # CLIs
     dive
     kubernetes-helm
     dust
 
+    ## Language servers and linters
+    nil
+    nixfmt
+    shellcheck
+
+    # GUIs
     slack
     obsidian
     spotify
