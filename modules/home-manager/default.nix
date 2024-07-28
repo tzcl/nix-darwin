@@ -29,12 +29,13 @@
   home.packages = with pkgs; [
     # System utilities
     coreutils
+    entr
 
     # Languages
     go
     python310
 
-    # Command line
+    # Command line tools
     yq-go
     uv
 
@@ -42,7 +43,7 @@
     just
     go-task
 
-    # CLIs
+    ## CLIs
     dive
     kubernetes-helm
     dust
