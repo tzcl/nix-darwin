@@ -4,7 +4,7 @@
     shellIntegration.enableZshIntegration = true;
     theme = "Catppuccin-Frappe";
     font = {
-      name = "Fira Code";
+      name = "FiraCode Nerd Font Mono";
       size = 13.0;
     };
     settings = {
