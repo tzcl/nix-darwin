@@ -13,6 +13,9 @@
         bindkey "^[[1;3C" forward-word
         bindkey "^[[1;3D" backward-word
 
+        # Separate words by punctuation
+        WORDCHARS=""
+
         # Set up command line
         autoload -U edit-command-line
         zle -N edit-command-line
@@ -31,9 +34,6 @@
               rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
           fi
         }
-
-        # Separate words by punctuation
-        WORDCHARS=''${WORDCHARS/\\/}
 
         # Set title to current directory
         precmd () {
