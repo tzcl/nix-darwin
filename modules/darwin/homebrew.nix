@@ -22,6 +22,7 @@
       "hashicorp/tap/terraform"
       "grpcurl"
       "bazelisk"
+      "earthly"
 
       ## Kubernetes
       "kubectl"
