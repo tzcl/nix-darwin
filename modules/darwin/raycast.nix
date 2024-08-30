@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, user, ... }: {
   environment.systemPackages = with pkgs; [ raycast ];
 
   system.defaults.CustomUserPreferences = {
@@ -10,7 +10,7 @@
 
   system.activationScripts.extraActivation.text = ''
     # Let Raycast have cmd+space instead of Spotlight
-    /usr/libexec/PlistBuddy /Users/toby/Library/Preferences/com.apple.symbolichotkeys.plist -c \
+    /usr/libexec/PlistBuddy ${user.home}/Library/Preferences/com.apple.symbolichotkeys.plist -c \
     "Set AppleSymbolicHotKeys:64:enabled false"
   '';
 }
