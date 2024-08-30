@@ -57,7 +57,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Applications/Google Chrome.app'"
+                                        "shell_command": "open \"/Applications/Google Chrome.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -73,7 +73,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/DataGrip.app'"
+                                        "shell_command": "open \"$HOME/Applications/DataGrip.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -89,7 +89,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/GoLand.app'"
+                                        "shell_command": "open \"$HOME/Applications/GoLand.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -105,7 +105,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/Home Manager Apps/Kitty.app'"
+                                        "shell_command": "open \"$HOME/Applications/Home Manager Apps/Kitty.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -121,7 +121,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Applications/Logseq.app'"
+                                        "shell_command": "open \"/Applications/Logseq.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -137,7 +137,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/Chrome Apps.localized/Google Meet.app'"
+                                        "shell_command": "open \"$HOME/Applications/Chrome Apps.localized/Google Meet.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -153,7 +153,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/Chrome Apps.localized/Gmail.app'"
+                                        "shell_command": "open \"$HOME/Applications/Chrome Apps.localized/Gmail.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -169,7 +169,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Users/toby/Applications/PyCharm Professional Edition.app'"
+                                        "shell_command": "open \"$HOME/Applications/PyCharm Professional Edition.app\""
                                     }
                                 ],
                                 "type": "basic"
@@ -185,7 +185,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open '/Applications/Zed.app'"
+                                        "shell_command": "open \"/Applications/Zed.app\""
                                     }
                                 ],
                                 "type": "basic"

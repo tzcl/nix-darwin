@@ -15,7 +15,13 @@
     # $ darwin-rebuild build --flake .#Tobys-MacBook-Pro
     darwinConfigurations."Tobys-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       # Need this to pass inputs to modules/darwin
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        user = {
+          name = "toby";
+          home = "/Users/toby";
+        };
+      };
 
       modules = [
         ./modules/darwin
@@ -33,7 +39,13 @@
     # $ darwin-rebuild build --flake .#Tobys-MacBook-Air
     darwinConfigurations."Tobys-MacBook-Air" = nix-darwin.lib.darwinSystem {
       # Need this to pass inputs to modules/darwin
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        user = {
+          name = "tobylaw";
+          home = "/Users/tobylaw";
+        };
+      };
 
       modules = [
         # TODO: Reorganise modules
@@ -43,7 +55,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.toby.imports = [ ./modules/home-manager ];
+          home-manager.users.tobylaw.imports = [ ./modules/home-manager ];
           home-manager.backupFileExtension = "backup";
         }
       ];

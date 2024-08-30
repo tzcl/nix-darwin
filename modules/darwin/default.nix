@@ -1,10 +1,7 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, user, ... }: {
   imports = [ ./config.nix ./zsh.nix ./homebrew.nix ./raycast.nix ];
 
-  users.users.toby = {
-    name = "toby";
-    home = "/Users/toby";
-  };
+  users.users.${user.name} = user;
 
   # Enable karabiner
   services.karabiner-elements.enable = true;

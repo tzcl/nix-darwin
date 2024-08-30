@@ -1,13 +1,13 @@
 [user]
 	name = Toby Law
 	email = toby.law@rokt.com
-	signingkey = /Users/toby/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [init]
 	defaultBranch = main
 
 [core]
-	excludesFile = /Users/toby/.gitignore
+	excludesFile = ~/.gitignore
 
 [alias] 
 	co = checkout
