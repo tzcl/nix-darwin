@@ -32,6 +32,7 @@
 
       # Personal
       "webp"
+      "flyctl"
     ];
     casks =
       [ "docker" "github" "google-chrome" "logseq" "visual-studio-code" "zed" ];
