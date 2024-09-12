@@ -34,8 +34,15 @@
       "webp"
       "flyctl"
     ];
-    casks =
-      [ "docker" "github" "google-chrome" "logseq" "visual-studio-code" "zed" ];
+    casks = [
+      "docker"
+      "github"
+      "google-chrome"
+      "logseq"
+      "visual-studio-code"
+      "zed"
+      "keepassxc"
+    ];
     masApps = {
       "Bitwarden" = 1352778147;
       "WireGuard" = 1451685025;
