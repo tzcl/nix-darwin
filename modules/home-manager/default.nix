@@ -34,6 +34,7 @@
     # Languages
     go
     python310
+    bun
 
     # Command line tools
     yq-go
