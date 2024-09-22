@@ -39,6 +39,7 @@
     # Command line tools
     yq-go
     uv
+    poetry
 
     ## Task runners
     just
