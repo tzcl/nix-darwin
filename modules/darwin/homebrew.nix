@@ -38,7 +38,6 @@
       "docker"
       "github"
       "google-chrome"
-      "logseq"
       "visual-studio-code"
       "zed"
       "keepassxc"
