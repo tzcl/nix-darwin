@@ -15,6 +15,7 @@
     "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
     "/Applications/Sublime Merge.app/Contents/SharedSupport/bin"
+    "/Applications/Ghostty.app/Contents/MacOS"
   ];
 
   home.file.".config/karabiner/karabiner.json".source =
