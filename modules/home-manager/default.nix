@@ -31,6 +31,7 @@
     # System utilities
     coreutils
     entr
+    broot
 
     # Languages
     go
