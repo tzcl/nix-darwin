@@ -53,7 +53,7 @@
 
     ## Language servers and linters
     nil
-    nixfmt
+    nixfmt-classic
     shellcheck
 
     # GUIs
