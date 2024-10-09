@@ -77,4 +77,8 @@
   home.file.".config/direnv/direnvrc".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.config/direnv/direnvrc";
+
+  home.file.".config/ghostty/config".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.config/ghostty/config";
 }
