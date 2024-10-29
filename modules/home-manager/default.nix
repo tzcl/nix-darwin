@@ -66,6 +66,7 @@
 
   # Work
   programs.awscli.enable = true;
+  programs.java.enable = true;
 
   # Use direnv
   programs.direnv = {

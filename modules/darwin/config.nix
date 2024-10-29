@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   # Dock settings
   system.defaults.dock.autohide = true;
   system.defaults.dock.show-recents = false;
@@ -17,6 +17,9 @@
     echo "Activating extra preferences..."
     # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
     osascript -e 'tell application "System Preferences" to quit'
+
+    # Symlink Java so /usr/libexec/java_home works
+    ln -sf "${pkgs.jdk}/zulu-21.jdk" "/Library/Java/JavaVirtualMachines"
   '';
 
   system.activationScripts.postUserActivation.text = ''
