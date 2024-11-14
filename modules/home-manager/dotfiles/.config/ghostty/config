@@ -1,1 +1,5 @@
 font-family = JetBrains Mono
+
+# The checkbox in the update window doesn't actually do anything
+# By default, this is set to always check
+auto-update = off
