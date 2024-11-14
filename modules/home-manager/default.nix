@@ -42,6 +42,7 @@
     yq-go
     uv
     poetry
+    jujutsu
 
     ## Task runners
     just
