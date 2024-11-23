@@ -18,5 +18,16 @@
     lazygit.enable = true;
     gh.enable = true;
     gh-dash.enable = true;
+
+    jujutsu = {
+      enable = true;
+      # Set up a config file if this gets more complex
+      settings = {
+        user = {
+          name = "Toby Law";
+          email = "toby.law@rokt.com";
+        };
+      };
+    };
   };
 }
