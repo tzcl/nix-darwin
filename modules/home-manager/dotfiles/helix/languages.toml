@@ -2,3 +2,11 @@
 name = "nix"
 auto-format = true
 formatter = { command = "nixfmt" }
+
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]

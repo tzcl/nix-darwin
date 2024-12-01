@@ -42,6 +42,7 @@
     yq-go
     uv
     poetry
+    watchman
 
     ## Task runners
     just
@@ -56,6 +57,8 @@
     nil
     nixfmt-classic
     shellcheck
+    pyright
+    ruff
 
     # GUIs
     slack
