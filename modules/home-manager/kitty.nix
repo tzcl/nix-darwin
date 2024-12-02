@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
-    theme = "Catppuccin-Frappe";
+    themeFile = "Catppuccin-Frappe";
     font = {
       name = "FiraCode Nerd Font Mono";
       size = 13.0;
