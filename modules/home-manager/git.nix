@@ -27,9 +27,7 @@
           name = "Toby Law";
           email = "toby.law@rokt.com";
         };
-        ui = {
-          default-command = "st";
-          paginate = "never";
+        ui.paginate = "never";
         };
       };
     };
