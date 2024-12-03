@@ -28,6 +28,10 @@
           email = "toby.law@rokt.com";
         };
         ui.paginate = "never";
+        signing = {
+          sign-all = true;
+          backend = "ssh";
+          key = "~/.ssh/id_ed25519.pub";
         };
       };
     };
