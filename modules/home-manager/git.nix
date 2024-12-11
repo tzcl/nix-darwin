@@ -27,7 +27,7 @@
           name = "Toby Law";
           email = "toby.law@rokt.com";
         };
-        ui.paginate = "never";
+        ui = { default-command = "log"; };
         signing = {
           sign-all = true;
           backend = "ssh";
