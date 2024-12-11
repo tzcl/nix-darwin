@@ -37,11 +37,13 @@
     go
     python310
     bun
+    nodejs_22
 
     # Command line tools
     yq-go
     uv
     poetry
+    pnpm
     watchman
 
     ## Task runners
