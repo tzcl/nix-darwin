@@ -7,6 +7,7 @@
   home.sessionPath = [
     "/opt/homebrew/bin"
     "$HOME/scripts"
+    "$HOME/go/bin"
 
     # Work
     "$HOME/.dotnet/tools"
