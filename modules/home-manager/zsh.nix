@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+
+  home.file.".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/src/nix-darwin/modules/home-manager/dotfiles/.config/starship.toml";
+
   programs = {
     zsh = {
       enable = true;
@@ -65,8 +69,10 @@
       };
     };
 
-    starship.enable = true;
-    starship.enableZshIntegration = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
     # Handy CLI tools
     atuin = {
