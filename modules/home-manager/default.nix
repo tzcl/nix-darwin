@@ -53,8 +53,13 @@
 
     ## CLIs
     dive
-    kubernetes-helm
     dust
+
+    ## Kube
+    minikube
+    kubernetes-helm
+    kubectl
+    kubectx
 
     ## Language servers and linters
     nil
@@ -73,6 +78,7 @@
   # Work
   programs.awscli.enable = true;
   programs.java.enable = true;
+  programs.k9s.enable = true;
 
   # Use direnv
   programs.direnv = {

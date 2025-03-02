@@ -4,13 +4,7 @@
     onActivation.cleanup = "zap";
     global.brewfile = true;
 
-    taps = [
-      "ejoffe/tap"
-      "derailed/k9s"
-      "hashicorp/tap"
-      "argoproj/tap"
-      "withgraphite/tap"
-    ];
+    taps = [ "ejoffe/tap" "hashicorp/tap" "argoproj/tap" "withgraphite/tap" ];
     brews = [
       "ejoffe/tap/spr"
       "withgraphite/tap/graphite"
@@ -25,9 +19,6 @@
       "earthly"
 
       ## Kubernetes
-      "kubectl"
-      "minikube"
-      "derailed/k9s/k9s"
       "argoproj/tap/kubectl-argo-rollouts"
 
       # Personal
