@@ -3,6 +3,28 @@
 	email = toby.law@rokt.com
 	signingkey = ~/.ssh/id_ed25519.pub
 
+[column]
+	# Format output into columns
+	ui = auto
+
+[branch]
+	# Sort branches by most recently committed to
+	sort = -committerdate
+
+[tag]
+	# Sort numerically rather than alpha (0.5.101 comes before 0.5.1000)
+	sort = version:refname
+
+[diff]
+	# Smarter algorithm than the default `myers`
+	algorithm = histogram
+	# Shows code movements in a different colour to changes
+	colorMoved = plain
+	# Use more intuitive prefixes in diffs
+ 	mnemonicPrefix = true
+	# Detects whether a file has been renamed or copied
+	renames = copy
+
 [init]
 	defaultBranch = main
 
@@ -27,9 +49,37 @@
 	insteadOf = https://github.com/
 
 [push]
+	# Do the right thing instead of complaining about no upstream branch
 	autoSetupRemote = true
+	# Push local tags to the server
+	followTags = true
+
+[fetch]
+	all = true
+	# Delete local branches/tags if deleted on the server
+	prune = true
+	pruneTags = true
+	
+[pull]
+	# Rebase instead of creating a merge commit
+	rebase = true
+
+[rebase]
+	# Automatically squash commits like squash!/fixup!/amend!
+	autoSquash = true
+	# Automatically create a temporary stash before rebasing
+	# Allows rebasing in a dirty worktree (but may result in non-trivial conflicts)
+	autoStash = true
+	# Automatically update any branches that point to commits being rebased
+	# Saves heaps of manual effort when working with stacked PRs
+	updateRefs = true
+ 
+[merge]
+	# Show what the code looked like before changes
+	conflictStyle = zdiff3
 
 [commit]
+	verbose = true
 	gpgSign = true
 
 [gpg]
@@ -40,3 +90,8 @@
 
 [rerere]
 	enabled = true
+	autoupdate = true
+
+[help]
+	# Help fix up typos
+	autocorrect = prompt
