@@ -13,6 +13,7 @@
     git = {
       enable = true;
       lfs.enable = true;
+      delta.enable = true;
     };
     ssh.enable = true;
     lazygit.enable = true;

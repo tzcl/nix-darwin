@@ -30,6 +30,17 @@
 
 [core]
 	excludesFile = ~/.gitignore
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	# Use n and N to move between hunks
+	navigate = true
+	# Link git blame to GitHub and allow opening lines in your IDE
+	hyperlinks = true
+	hyperlinks-file-link-format = "cursor://file/{path}:{line}"
 
 [alias] 
 	co = checkout
