@@ -21,6 +21,15 @@
         };
       }];
 
+      antidote = {
+        enable = true;
+        plugins = [
+          "getantidote/use-omz"
+          "ohmyzsh/ohmyzsh path:lib"
+          "ohmyzsh/ohmyzsh path:plugins/git"
+        ];
+      };
+
       initExtra = ''
         # Make fn+delete forward delete
         bindkey "^[[3~"   delete-char
@@ -72,9 +81,6 @@
         rokt-prod = "aws-vault exec rokt-prod -- ";
 
         ld = "lazydocker";
-
-        gc = "git add -A && git commit";
-        gca = "git add -A && git commit --amend";
 
         switch = "darwin-rebuild switch --flake ~/src/nix-darwin";
       };
