@@ -10,6 +10,17 @@
       enableCompletion = true;
       syntaxHighlighting.enable = true;
 
+      plugins = [{
+        name = "forgit";
+        file = "forgit.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "wfxr";
+          repo = "forgit";
+          rev = "25.03.0";
+          sha256 = "sha256-wYCuCxPv3HGEGaze/+an6ZprCtXu5ThsTCwaIquEy3Y=";
+        };
+      }];
+
       initExtra = ''
         # Make fn+delete forward delete
         bindkey "^[[3~"   delete-char
