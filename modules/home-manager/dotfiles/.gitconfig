@@ -69,7 +69,6 @@
 	all = true
 	# Delete local branches/tags if deleted on the server
 	prune = true
-	pruneTags = true
 	
 [pull]
 	# Rebase instead of creating a merge commit
