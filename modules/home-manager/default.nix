@@ -46,6 +46,8 @@
     poetry
     pnpm
     watchman
+    jid
+    fastgron
 
     ## Task runners
     just
