@@ -4,6 +4,6 @@ font-family = JetBrains Mono
 # By default, this is set to always check
 auto-update = off
 
-macos-option-as-alt = right
+macos-option-as-alt = left
 
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
