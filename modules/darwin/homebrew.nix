@@ -4,7 +4,13 @@
     onActivation.cleanup = "zap";
     global.brewfile = true;
 
-    taps = [ "ejoffe/tap" "hashicorp/tap" "argoproj/tap" "withgraphite/tap" ];
+    taps = [
+      "ejoffe/tap"
+      "hashicorp/tap"
+      "argoproj/tap"
+      "withgraphite/tap"
+      "railwaycat/emacsmacport"
+    ];
     brews = [
       "ejoffe/tap/spr"
       "withgraphite/tap/graphite"
