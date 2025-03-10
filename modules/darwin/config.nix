@@ -10,7 +10,7 @@
   system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
 
   # Enable sudo authentication with Touch ID
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   system.activationScripts.extraActivation.enable = true;
   system.activationScripts.extraActivation.text = ''

@@ -29,9 +29,10 @@
       "docker"
       "github"
       "google-chrome"
+      "keepassxc"
+      "obsidian"
       "visual-studio-code"
       "zed"
-      "keepassxc"
     ];
     masApps = {
       "Bitwarden" = 1352778147;

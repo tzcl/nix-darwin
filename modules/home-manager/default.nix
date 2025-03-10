@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [ ./zsh.nix ./git.nix ./helix.nix ./kitty.nix ];
+  imports = [ ./zsh.nix ./git.nix ./helix.nix ];
 
   # Required for backwards-compatibility
   home.stateVersion = "23.11";
@@ -72,7 +72,6 @@
 
     # GUIs
     slack
-    obsidian
     spotify
     wireshark
   ];
